@@ -8,27 +8,41 @@ namespace lab_3
         public static string[] schedule = new string[5];
         static void Main(string[] args)
         {
+            switch (Menu())
+            {
+                case 1:
+                    CreateStudent();
+                    Menu();
+                    break;
 
+                case 2:
+                    RemoveStudent();
+                    Menu();
+                    break;
+
+                case 3:
+                    PrintClasses();
+                    Menu();
+                    break;
+
+            }
+        }
+
+        public static int Menu()
+        {
+            Console.WriteLine("------------------School Management------------------");
             Console.WriteLine("What would you like to do?");
+            Console.WriteLine("");
             Console.WriteLine("1. Add a new student.");
             Console.WriteLine("2. Remove a student.");
+            Console.WriteLine("");
             // Console.WriteLine("3. Print a students classes.");
             // Console.WriteLine("4. Add a grade to a students class.");
             // Console.WriteLine("5. List all students in a class.");
             // Console.WriteLine("6. Quit / Exit.");
-            Console.Write("Enter 1-6:");
+            Console.Write("Pick 1-6: ");
 
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            switch (choice)
-            {
-                case 1:
-                    CreateStudent();
-                    break;
-
-                    //case 2:
-
-            }
+            return Convert.ToInt32(Console.ReadLine());
         }
 
         public static void CreateStudent()
@@ -53,10 +67,14 @@ namespace lab_3
             Console.WriteLine("Class 5: ");
             schedule[4] = Console.ReadLine();
 
+            Console.WriteLine("Done! Student created. Press enter to return to main menu..");
+            Console.ReadLine();
+            Console.Clear();
+
             Student newkid = new Student(name, age, schedule);
 
         }
-        public void PrintClasses()
+        public static void PrintClasses()
         {
             Console.WriteLine("Enter the student ID you want to list classes of: ");
             int idnum = Convert.ToInt32(Console.ReadLine());
