@@ -1,17 +1,23 @@
 using System;
 
-public class Student
+public class Student 
 {
-    public string Name;
-    public int Age;
-    public int NumOfClasses;
+    public static string Name;
+    public static int Age;
+    public static string[] Schedule;
 
+    public int studentID { get; private set; }
 
-    public Student(string name, int age, int numofclasses)
+    public Student(string name, int age, string[] schedule)
     {
         Name = name;
         Age = age;
-        NumOfClasses = numofclasses;
+        Schedule = schedule;
+
+        studentID = new Random().Next(1, 1000);
+
+        EntireClass.ListOfStudents.Add(this);
+
     }
 
 

@@ -3,7 +3,7 @@
 Create a program that keeps track of students. (BannerWeb) 
 ### Possiable points:
 * Full = 10
-* Partial = 5
+* Partial = 5 
 * None = 0
 
 ### Due Date:
