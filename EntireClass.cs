@@ -9,7 +9,5 @@ public static class EntireClass
     public static List<Student> ListOfGrades = new List<Student>();
     
 
-    
-
 
 }
